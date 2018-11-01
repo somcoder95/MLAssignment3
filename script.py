@@ -118,10 +118,7 @@ def blrObjFunction(initialWeights, *args):
     #Adding bias at beginning
     a=np.ones((train_data.shape[0],1))
     train_data=np.concatenate((a,train_data), axis = 1)
-    ##################
-    # YOUR CODE HERE #
-    ##################
-    # HINT: Do not forget to add the bias term to your input data
+   
     error=labeli*np.log(sigmoid(np.dot(train_data,initialWeights)))+(1-labeli)*np.log(1-sigmoid(np.dot(train_data,initialWeights)))
     error=np.sum(error)
     error=b*error
@@ -153,10 +150,7 @@ def blrPredict(W, data):
     """
     label = np.zeros((data.shape[0], 1))
 
-    ##################
-    # YOUR CODE HERE #
-    ##################
-    # HINT: Do not forget to add the bias term to your input data
+   
     a=np.ones((data.shape[0],1))
     data=np.concatenate((a,data), axis = 1)
     label = sigmoid(np.dot(data, W)) 
@@ -192,10 +186,7 @@ def mlrObjFunction(params, *args):
     train_data=np.concatenate((a,train_data), axis = 1)
     O=sigmoid(np.dot(train_data,W))
     
-    ##################
-    # YOUR CODE HERE #
-    ##################
-    # HINT: Do not forget to add the bias term to your input data
+   
     error=labeli*np.log(sigmoid(np.dot(train_data,W)))+(1-labeli)*np.log(1-sigmoid(np.dot(train_data,W)))
     error=np.sum(error)
     
@@ -228,10 +219,7 @@ def mlrPredict(W, data):
     """
     label = np.zeros((data.shape[0], 1))
 
-    ##################
-    # YOUR CODE HERE #
-    ##################
-    # HINT: Do not forget to add the bias term to your input data
+   
     a=np.ones((data.shape[0],1))
     data=np.concatenate((a,data), axis = 1)
     label = sigmoid(np.dot(data, W)) 
@@ -293,9 +281,7 @@ Script for Support Vector Machine
 """
 
 print('\n\n--------------SVM-------------------\n\n')
-##################
-# YOUR CODE HERE #
-##################
+
 #SVM with Linear Kernel
 clf = SVC(kernel='linear')
 train_label=train_label.ravel()
